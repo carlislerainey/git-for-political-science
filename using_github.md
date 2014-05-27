@@ -107,8 +107,8 @@ To update a project, you need to do the following:
   1. Add files interactively. To do this, you can simply enter the command `git add -i` in the terminal. This causes Git to go into an interactive "shell mode" that allows you to select what you'd like to do (to add or "stage" files, choose update by typing "2" or "u" and pressing enter) and what files you'd like to do it to (type the number indexing the files you'd like to add, separated by commas, and press enter). Type "q" and press enter to quit the shell mode.
   2. Add the files manually. To do this, simply enter the command `git add Folder/filename.ext`, with `Folder` substituted with the directory of the modified file and `filename.ext` substituted with the appropriate filename and extension. With this approach you'll need to go through and add each modified file, one-at-a-time. Note that `git add Folder` stages all the files and directories within `Folder`, even those that were not previously tracked.
   3. Add all modified, previously tracked files. To do this, simply type `git add -u`. I find myself adopting this approach most often. I simple make sure that the files are modified as I expect by using `git status` beforehand.
-4. *Commit the changes.* Once the modified files are staged, the changes need to be committed. To do this, simply enter the command `git commit -m "does this"`, where "does this" is replaced with a short, descriptive commit message. Writing a good commit message is important. Briefly, it should (in the present tense) briefly describe the changes made (e.g., "add education as control variable").
-5. *Push the changes to GitHub.* Just type `git push` and the changes are sent off to GitHub so that the files are *publicly* version controlled
+4. *Commit the changes.* Once the modified files are staged, the changes need to be committed. To do this, simply enter the command `git commit -m "does this"`, where "does this" is replaced with a short, descriptive commit message. Writing a good commit message is important. Briefly, it should (in the present tense) briefly describe the changes made (e.g., "add education as control variable"). [Here]((https://github.com/erlang/otp/wiki/Writing-good-commit-messages)) and [here]((http://who-t.blogspot.com/2009/12/on-commit-messages.html)) are a couple of good posts about commit messages.
+5. *Push the changes to GitHub.* Just type `git push` and the changes are sent off to GitHub so that the files are *publicly* version controlled.
 
 ## Unstage a File
 
@@ -131,9 +131,5 @@ As long as you don't make any changes to the files being moved around or renamed
 Suppose you want to make a change to someone else's project. It might be that you are making a change to a project hosted by a coauthor or want to make a suggested change to a total stranger's code. The basic idea is to fork their repository into your own GitHub account, clone it onto your hard drive, make any changes, and submit a pull request.
 
 ## Misc. Material
-
-[Writing Good Commit Messages](https://github.com/erlang/otp/wiki/Writing-good-commit-messages)
-
-[Here](http://who-t.blogspot.com/2009/12/on-commit-messages.html)'s more on committ messages.
 
 A nice [comic](http://www.osnews.com/story/19266/WTFs_m) on high-quality code.

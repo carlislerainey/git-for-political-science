@@ -36,38 +36,87 @@ Thoughts from others on Git/GitHub.
 * Karthik Ram [provides](http://www.scfbm.org/content/pdf/1751-0473-8-7.pdf) a very thorough discussion of the motivation for Git/GitHub in the context of scientific research.  Appropriately, there is a GitHub [repository](https://github.com/karthik/smb_git) for this paper. If you click over to the issues and/or history of this project, you can get a good feel for how this project benefitted from public version control.
 * Carly Strasser [offers](http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/) a nice discussion of the benefits of Git/GitHub, including the idea of a "lab notebook."
 
-
 ## Some General Principles
 
-1. The project directory should contain all the code, data, and text relevant to a particular project. I keep files that are not project-specific (e.g., papers and bibliography information in separate directories.) In order to effectively use version control, then the main files must be in plain text, such as .R scripts, Stata .do files, LaTeX .tex files, or Markdown .md files, or comma-separated .csv data files. The directory should be named something short and descriptive and should not contain spaces (such as NME, Need, or ACA_Opinion). Note that I capitalize directories and use lower-case for files, but a majority seem to use lower-case always. Rich fitzjohn [provides](http://nicercode.github.io/blog/2013-04-05-projects/) a nice overview of *one* good way to layout your project directories.
+The project directory should contain all the code, data, and text relevant to a particular project. I keep files that are not project-specific (e.g., papers and bibliography information in separate directories.) In order to effectively use version control, then the main files must be in plain text, such as .R scripts, Stata .do files, LaTeX .tex files, or Markdown .md files, or comma-separated .csv data files. The directory should be named something short and descriptive and should not contain spaces (such as NME, Need, or ACA_Opinion). Note that I capitalize directories and use lower-case for files, but a majority seem to use lower-case always. Rich fitzjohn [provides](http://nicercode.github.io/blog/2013-04-05-projects/) a nice overview of *one* good way to layout your project directories.
+
+While Git (in principle) can track changes to binary files (such as `.xlsx`, `.docx`, or `.pdf`), it works best with plain text files (`.csv`, `.md`, `.tex`, .do). This allows Git to note only keep track of the versions, but to highlight any changes across versions. Therefore, for public version control to be *most* effective, you should plan on using plain text files for your data, manuscript, and code. Most code (such as `.do` files for Stata or `.R` scripts for R) are already in plain text, so no change is required. It is easy to convert data from Stata's proprietary `.dta` format or Excel's binary (but open) `.xlsx` format to a comma-separated `.csv` format that is more open, transparent, and trackable. Manuscripts present the biggest obstacle since switching from Microsoft Word's `.doc` or `.docx` formats to Markdown's `.md` or LaTeX's .tex are not trivial. However, this should not be a sticking point. When I coauthor with others who prefer Word, I simply track the `.docx` file. It is difficult to compare across different versions, but with descriptive commit messages and appropriate tagging at various stages of the publication process, Git works far better than `new_final_c_3b.docx`. If you are interested in using a more trackable format, then you can find more about `.tex` in the [wikibook](http://en.wikibooks.org/wiki/LaTeX) and `.md` (combined with `pandoc`) on John MacFarlane's [page](http://johnmacfarlane.net/pandoc/getting-started.html). You cn find out more about the differences between these two from a [discussion](http://yihui.name/en/2013/10/markdown-or-latex/) by YiHui Xie.
 
 ## Install Git
 
-Follow [these instructions](https://help.github.com/articles/set-up-git) to set up Git on your computer. 
+Follow [these instructions](https://help.github.com/articles/set-up-git) to set up Git on your computer.
 
 ## Setup a GitHub Account
 
-You might also want to setup an SSH key so that you don't need to provide your username and password when pushing to GitHub. While this is not necessary, it is convenient, so follow [these instructions](https://help.github.com/articles/generating-ssh-keys) to set it up. 
+To setup a GitHub account, you simply need to go to [github.com/join](https://github.com/join), and provide a username, e-mail address, and password. You should choose your username carefully since it becomes an important part of your public profile. Shorter is better than longer, but you want people to associate it with you. I use "carlislerainey."
+
+You might also want to setup an SSH key so that you don't need to provide your username and password when pushing to GitHub. While this is not necessary, it is convenient, so follow [these instructions](https://help.github.com/articles/generating-ssh-keys) to set it up.
 
 ## Setup a `.gitignore` File
 
+By default, Git "suggests" tracking all files in a directory, but you'll want to always ignore some of these. For example, LaTeX generates a `.aux` file with each compiling, and there is no reason to track these. You'd like Git to ignore this file and others like it. You can do this easily by setting up a global `.gitignore` file. The manual [provides](http://git-scm.com/docs/gitignore) some useful information for setting this up.
+
+The GitHub user octocat [provides](https://gist.github.com/octocat/9257657) a suggested set of files to ignore.
+
+My `.gitignore` file seems to work pretty well for me, so I'm including it below. Notice that I keep an `Old_Files` directory in each project directory, where I throw old files that I don't plan on using any more. This shows that I don't completely trust the version control system. I'll be rid of this soon.
+
+    *~
+    .*
+    *.DS_Store
+    *.Rhistory
+    *.aux
+    *.bbl
+    *.blg
+    *.log
+    *.out
+    *.synctex.gz
+    Old_Files/
 
 
-## Start Publicly Tracking a Project 
+## Start Publicly Tracking a Project
 
 1. **Create the README**. Start a file called `README.md` in the main directory. For now, this should be a short description of the project. As the project grows, this file can grow with it. I suggest linking to the relevant project files here (working papers, presentation slides, etc.) at the top of the README. This file should be a plain text document written in Markdown. If you're not familiar with the Markddown syntax, you can find out how to use it in about five minutes [here](http://daringfireball.net/projects/markdown/syntax), [here](), or [here]().
 2. **Initiate .git**. Once you've started the README, you'll want to initiate .git version control within the project directory. To do this, simply open up a terminal, set the current directory to the project folder, and type the command `git init`. Now you're ready to publicly track your projects.
-3. **Push your directory to GitHub.** Go to your GitHub page (i.e., https://github.com/username), click the "Repositories" tab, and click the "New" button. Give the repository a name--I always use the name of the project directory. 
+
+  In my case, I keep my projects inside a "Project" directory in a Dropbox folder that is common across all my computers (and my iPhone and iPad). To initiate tracking, I need to do the following in the terminal (on Mac OS X).
+
+        cd ~/Dropbox/Projects/NME
+        git init
+
+3. **Add the files you want to track.** To start tracking files, you first need to make sure that you are working in the project directory. Then you can use the command `git status` to see what files you are already tracking, if any. Then you can add files with the `git add` command. At first, I recommend adding files one at a time. For example, suppose that your project directory is called `NME`, and that the file you want to add, nme.tex, is located in the subdirectory `Manuscript`. Then the following is what you want.
+
+        git status
+        git add Manuscript/nme.tex
+        git commit -m "add manuscript"
+
+4. **Push your directory to GitHub.** Go to your GitHub page (i.e., https://github.com/username), click the "Repositories" tab, and click the "New" button. Give the repository a name--I always use the name of the project directory.
 
 ## Update a Project
 
-I should add something about the race to a regression here.
+On thing that I first notice in my students, but now I see that I'm just as guilty of, is "the race to a regression." That is, I devote the absolute minimum required effort (or less) to everything leading up the the regression. My attitude is usually that I'll go back later and clean up everything, double checking along the way, if the line of investigation "proves useful" (i.e., provides stars). I rarely go back later. I find that my code that original was `let_me_just_try_this_really_quickly.R` becomes a part of `analysis.R`.
 
-In my view project development and Git/GitHub works best when users make small, discrete changes to a project. This takes some thought and discipline, but it is the best way to go. I'm guilty of coming back from a conference and making dozens of small changes to an existing projects, incorporating all the suggestions in a single update. This is a poor strategy. It is a poor way to go about developing a project. It is a poor way to keep track of things. It is good to make small, discrete changes, and push those changes to GitHub.
+Instead of a race to the regression, Git encourages me to develop projects a little more carefully, thinking about projects in tiny steps, each to be publicly committed, and each done right.
 
-## Make a Change to Someone Else's Project 
+In my view project development and Git/GitHub works best when users make small, discrete changes to a project. This takes some thought and discipline, but it is the best way to go. I'm guilty of coming back from a conference and making dozens of small changes to an existing projects, incorporating all the suggestions in a single update. I just [did it](https://github.com/carlislerainey/Need/commit/0b01f06df21926e784429b2221552a43bfc27912) after the State Politics and Policy Conference. This is a poor strategy, but I'm learning. It is a poor way to go about developing a project. It is a poor way to keep track of things. It is good to make small, discrete changes, and push those changes to GitHub.
 
-Suppose you want to make a change to someone else's project. It might be that you are making a change to a project hosted by a coauthor or want to make a suggested change to a total stranger's code. The basic idea is to fork their repository into your own GitHub account, clone it onto your hard drive, make any changes, and submit a pull request. 
+To update a project, you need to do the following:
+
+1. *Choose a discrete change to make to the project.* You need to describe the change in a sort commit message, so something like "add robustness check removing Alaska" or "rewrite the introduction" are good changes. If you notice something else to fix along the way, make a note of it and continue with your current update. Fix the other problem in a separate commit. It is extremely tempting to start fixing every problem you see. If you do this, you risk losing track of problems have been completely fixed, partial fixed, and need to be fixed later. A more deliberate, one-at-a-time approach is better.
+2. *Make the change.* Do this just as you normally would. The only thing to avoid is moving or renaming files. Git has commands that take care of this and move the files' history with them (see below for more details).
+3. *Stage the changes.* First, you should make sure that you are in the correct working directory. Then you should run `git status` and make sure that (1) you are on the correct branch (if you've started branching) and (2) that the modified files are as you expect. If everything is in order, then you need to add (or "stage") the modified files. I usually do this in one of three ways.
+  1. Add files interactively. To do this, you can simply enter the command `git add -i` in the terminal. This causes Git to go into an interactive "shell mode" that allows you to select what you'd like to do (to add or "stage" files, choose update by typing "2" or "u" and pressing enter) and what files you'd like to do it to (type the number indexing the files you'd like to add, separated by commas, and press enter). Type "q" and press enter to quit the shell mode.
+  2. Add the files manually. To do this, simply enter the command `git add Folder/filename.ext`, with `Folder` substituted with the directory of the modified file and `filename.ext` substituted with the appropriate filename and extension. With this approach you'll need to go through and add each modified file, one-at-a-time. Note that `git add Folder` stages all the files and directories within `Folder`, even those that were not previously tracked.
+  3. Add all modified, previously tracked files. To do this, simply type `git add -u`. I find myself adopting this approach most often. I simple make sure that the files are modified as I expect by using `git status` beforehand.
+4. *Commit the changes.* Once the modified files are staged, the changes need to be committed. To do this, simply enter the command `git commit -m "does this"`, where "does this" is replaced with a short, descriptive commit message. Writing a good commit message is important. Briefly, it should (in the present tense) briefly describe the changes made (e.g., "add education as control variable").
+5. *Push the changes to GitHub.* Just type `git push` and the changes are sent off to GitHub so that the files are *publicly* version controlled
+
+## Move a File
+
+## Rename a File
+
+## Make a Change to Someone Else's Project
+
+Suppose you want to make a change to someone else's project. It might be that you are making a change to a project hosted by a coauthor or want to make a suggested change to a total stranger's code. The basic idea is to fork their repository into your own GitHub account, clone it onto your hard drive, make any changes, and submit a pull request.
 
 ## Misc. Material
 

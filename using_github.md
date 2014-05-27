@@ -110,9 +110,21 @@ To update a project, you need to do the following:
 4. *Commit the changes.* Once the modified files are staged, the changes need to be committed. To do this, simply enter the command `git commit -m "does this"`, where "does this" is replaced with a short, descriptive commit message. Writing a good commit message is important. Briefly, it should (in the present tense) briefly describe the changes made (e.g., "add education as control variable").
 5. *Push the changes to GitHub.* Just type `git push` and the changes are sent off to GitHub so that the files are *publicly* version controlled
 
-## Move a File
+## Unstage a File
 
-## Rename a File
+Suppose that you've staged a file to be committed, but now realize that the file shouldn't be included (i.e., it is a .aux file from LaTeX that you don't want to track, for example). You can unstage this file by entering the command `git reset HEAD path/to/file`. This unstages the file so that changes will not be committed as part of the next commit, but keeps any local changes.
+
+## Move or Rename a File
+
+If you want to move a file to a new location, you use the command below.
+
+    git mv path/to/old/file.ext path/to/new/file.ext
+
+To rename a file, the logic is nearly identical.
+
+git mv path/to/old_filename.ext path/to/new_filename.ext
+
+As long as you don't make any changes to the files being moved around or renamed, then Git will maintain the history of the file. If you make changes *and* move/rename the files, then you'll lose the history (i.e., Git thinks that this is a new file to be tracked).
 
 ## Make a Change to Someone Else's Project
 

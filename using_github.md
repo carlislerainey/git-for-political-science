@@ -89,7 +89,17 @@ My `.gitignore` file seems to work pretty well for me, so I'm including it below
         git add Manuscript/nme.tex
         git commit -m "add manuscript"
 
-4. **Push your directory to GitHub.** Go to your GitHub page (i.e., https://github.com/username), click the "Repositories" tab, and click the "New" button. Give the repository a name--I always use the name of the project directory.
+4. **Push your directory to GitHub.** Go to your GitHub page (i.e., https://github.com/username), click the "Repositories" tab, and click the "New" button. Give the repository a name--I always use the name of the project directory. You should follow the instructions, but it will give you several lines of code to run--don't run them yet.
+
+The first line suggests using th
+
+    git remote add origin https://github.com/username/new_repo.git
+
+Instead, use 
+
+    git remote add origin git@github.com:username/new_repo.git
+
+This will allow you to push to GitHb without providing your username and password. If you've set up the remote with the https://... url, then you can change it by simply running the suggested alternative after setting the working directory to the project directory.
 
 ## Update a Project
 

@@ -101,6 +101,8 @@ Instead, use
 
 This will allow you to push to GitHb without providing your username and password. If you've set up the remote with the https://... url, then you can change it by simply running the suggested alternative after setting the working directory to the project directory.
 
+For more information, see Karl Broman's [discussion](http://kbroman.github.io/github_tutorial/pages/init.html) of intializing repositories.
+
 ## Update a Project
 
 On thing that I first notice in my students, but now I see that I'm just as guilty of, is "the race to a regression." That is, I devote the absolute minimum required effort (or less) to everything leading up the the regression. My attitude is usually that I'll go back later and clean up everything, double checking along the way, if the line of investigation "proves useful" (i.e., provides stars). I rarely go back later. I find that my code that original was `let_me_just_try_this_really_quickly.R` becomes a part of `analysis.R`.

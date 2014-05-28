@@ -126,6 +126,45 @@ git mv path/to/old_filename.ext path/to/new_filename.ext
 
 As long as you don't make any changes to the files being moved around or renamed, then Git will maintain the history of the file. If you make changes *and* move/rename the files, then you'll lose the history (i.e., Git thinks that this is a new file to be tracked).
 
+## Using Tags Effectively
+
+As far as I can tell, tags are intended to denote stable versions of software, such as version 2.0. However, I've found it useful to use tags to denote important versions of the project. For example, after I submit a manuscript to a journal, I tag the most recent commit with a descriptive label (e.g., `ajps_initial`) and short description (e.g., initial submission to AJPS). This makes it very easy to go back and compare the current version to the version initially submitted to the journal. This makes it easier to write response memos.
+
+### Assigning Tags
+
+To assign a tag to the current commit, you just need to use 
+
+    git tag -a descriptive_tag -m "Short Description Here" 
+
+In practice, my tags look something like
+
+    git tag -a jop_intial -m "Initial Submission to JOP"  
+
+Importantly, after assigning the tag, you need to use `git push --tags` to push the tags to GitHub.
+
+If you want to tag a previous commit, where `9fceb02` is first part of the commit ID, use
+
+    git tag -a descriptive_tag 9fceb02 -m "Short Description Here"
+
+You can use `git log` or explore the history of a project on GitHub to find the id of the desired commit. Notice that the ID is 40 characters long. It is enough to use just the first few.
+
+If you want to change the name of a tag, use
+
+    git tag new old
+    git tag -d old
+    git push origin :refs/tags/old
+    git push --tags
+
+### Comparing Tagged Versions
+
+Once you are ready to compare the versions, you simply need to go use `git tag` to get a list of the tags for the project. If you prefer to work in the terminal, then you can just use `git diff -tag`, replacing "tag" with appropriate tag. However, I find it a little more useful to use the Compare View on GitHub ([here](https://github.com/github/linguist/compare/v2.2.0...v2.3.3)'s an example from GitHub). To do this, go to the project repository on GitHub and add `\compare` to the url. This brings up a compare window (more [here](https://github.com/blog/612-introducing-github-compare-view) and [here](https://help.github.com/articles/comparing-commits-across-time)). Click the dropdown menu for the base of comparison and type the name of the tag. Press enter and you have a nice summary of the differences between the tagged version and the current version of the project.
+
+Note that if you are using binary files, such as `.docx`, you can download and compare the files yourself, but Git/GitHub will not highlight the differences as it will for plain text files such as `.md` or `.tex`.
+
+Note that you can also view and explore the tagged versions of the project by clicking the "Releases" button on the GitHub repository page.
+
+You can find out more about tagging from [Pro Git](http://git-scm.com/book/en/Git-Basics-Tagging).
+
 ## Make a Change to Someone Else's Project
 
 Suppose you want to make a change to someone else's project. It might be that you are making a change to a project hosted by a coauthor or want to make a suggested change to a total stranger's code. The basic idea is to fork their repository into your own GitHub account, clone it onto your hard drive, make any changes, and submit a pull request.

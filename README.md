@@ -1,4 +1,4 @@
-[Zach Jones](http://zmjones.com/) prompted me to use Git/GitHub with his [article](http://zmjones.com/git/) in *The Political Methodologist*. I'm not a programmer, but I'm probably above the median in my tech-savyness. Git/GitHub was hard for me to learn. I had no trouble, installing Git, setting up a GitHub account, initializing, adding, committing, and pushing. But I had a lot of questions. Many of these question did not revolve around the software, but around best practices.
+[Zach Jones](http://zmjones.com/) prompted me to use Git/GitHub with his [article](http://zmjones.com/git/) in *The Political Methodologist*. I'm not a programmer, but I'm probably above the median in my tech-savyness. Git/GitHub was hard for me to learn. And Git is extremely complicated, so I'm still a little unsure of myself. I had no trouble, installing Git, setting up a GitHub account, initializing, adding, committing, and pushing. But I had a lot of questions. Many of these question did not revolve around the software, but around best practices.
 
 * How often should should I commit changes?
 * What files should I track? Should I track the data? The manuscript?

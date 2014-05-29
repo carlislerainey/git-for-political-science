@@ -99,6 +99,8 @@ Instead, use
 
     git remote add origin git@github.com:username/new_repo.git
 
+There is a button near the top of the interface that allows you to switch from https to ssh. Just click it and GitHub will change its suggestion.
+
 This will allow you to push to GitHb without providing your username and password. If you've set up the remote with the https://... url, then you can change it by simply running the suggested alternative after setting the working directory to the project directory.
 
 For more information, see Karl Broman's [discussion](http://kbroman.github.io/github_tutorial/pages/init.html) of intializing repositories.

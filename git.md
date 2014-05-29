@@ -1,6 +1,12 @@
 # How I Use Git and GitHub for Political Science Research
 
-[Zach Jones](http://zmjones.com/) prompted me to use Git/GitHub with his [article](http://zmjones.com/git/) in *The Political Methodologist*. I'm not a programmer, but I'm probably above the median in my tech-savyness. Git/GitHub was hard for me to learn. I had no trouble, installing Git, setting up a GitHub account, initializing, adding, committing, and pushing. But I had a lot of questions. Many of these question did not revolve around the software, but around best practices.
+> Much like James Cameron's *Avatar*, Git doesn't make any goddamn sense. - [Zach Holman](http://zachholman.com/talk/more-git-and-github-secrets/) (starting at 1:43)
+
+Git/GitHub is hard, and my experience aligns well with Zach's.
+
+In spite of this, another Zach, [Zach Jones](http://zmjones.com/), [convinced](http://zmjones.com/git/) me to use Git/GitHub to publicly version-control my research projectswith his [article](http://zmjones.com/git/) in *The Political Methodologist*. 
+
+I had no trouble installing Git, setting up a GitHub account, initializing, adding, committing, and pushing. But I had a lot of questions. Many of these question did not revolve around the software, but around best practices.
 
 * How often should should I commit changes?
 * What files should I track? Should I track the data? The manuscript?

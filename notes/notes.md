@@ -10,9 +10,25 @@ http://kernowsoul.com/blog/2012/06/20/4-ways-to-avoid-merge-commits-in-git/
 
 I need to add a few lines about the way that git encourages you to slow down, keep things organized, and think in discrete steps.
 
-## Examining Remotes
+## Setting, Updating, and Examining Remotes
 
 `git remote`, `git remote -v`,  `git remote -va`
+
+I once wanted to change the URI of the origin remote. I originally called the GitHub repository for this document `GitHub`, but Brendan Kenkel [suggested](https://github.com/carlislerainey/git-for-political-science/issues/1) that I rename it `git-for-political-science`. After using the GitHub interface to rename the repository, my remotes point to the old name.
+
+    $ git remote -v
+    origin ssh://git@github.com/carlislerainey/GitHub.git (fetch)
+    origin ssh://git@github.com/carlislerainey/GitHub.git (push)
+
+This is okay because GitHub will redirect my pushes, but I am a bit obsessive about these things, so I used 
+
+    git remote set-url origin ssh://git@github.com/carlislerainey/git-for-political-science.git`
+
+Now I have exactly what I want.
+
+    $ git remote -v
+    origin ssh://git@github.com/carlislerainey/git-for-political-science.git (fetch)
+    origin ssh://git@github.com/carlislerainey/git-for-political-science.git (push)
 
 ## Collaborating
 

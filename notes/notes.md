@@ -10,6 +10,10 @@ http://kernowsoul.com/blog/2012/06/20/4-ways-to-avoid-merge-commits-in-git/
 
 I need to add a few lines about the way that git encourages you to slow down, keep things organized, and think in discrete steps.
 
+## Examining Remotes
+
+`git remote`, `git remote -v`,  `git remote -va`
+
 ## Collaborating
 
 This [post](http://spring.io/blog/2010/12/21/social-coding-in-spring-projects) has a useful workflow, though not based on GitHub.

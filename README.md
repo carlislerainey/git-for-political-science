@@ -1,10 +1,12 @@
-[Zach Jones](http://zmjones.com/) prompted me to use Git/GitHub with his [article](http://zmjones.com/git/) in *The Political Methodologist*. I'm not a programmer, but I'm probably above the median in my tech-savyness. Git/GitHub was hard for me to learn. And Git is extremely complicated, so I'm still a little unsure of myself. I had no trouble, installing Git, setting up a GitHub account, initializing, adding, committing, and pushing. But I had a lot of questions. Many of these question did not revolve around the software, but around best practices.
+[Zach Jones](http://zmjones.com/) prompted me to use Git/GitHub with his [article](http://zmjones.com/git/) in *The Political Methodologist*. I'm not a programmer, but I'm probably above the median in tech-savyness. Git/GitHub was hard for me to learn. I'm still a little unsure of myself. 
 
-* How often should should I commit changes?
+I had no trouble installing Git, setting up a GitHub account, initializing, adding, committing, and pushing. But I had (and still have) a lot of questions. Many of these question did not revolve around the software, but around best practices.
+
+* How often should I commit changes?
 * What files should I track? Should I track the data? The manuscript?
-* Given that I am not writing and releasing different versions software, should I be using tags?
+* Given that I'm not writing and releasing different versions software, how should I be using tags?
 
-In short, most users of Git/GitHub are programmers. I am a political scientist. Most users are tracking software. I want to track an empirical research project. I had a lot of difficulty mapping the Git/GitHub facilities onto my needs as a researcher. I suggested the Zach write a guide for people like me. He told me:
+In short, most users of Git/GitHub are programmers. I am a political scientist. Most users track software. I want to track empirical research projects. I had a lot of difficulty mapping the Git/GitHub facilities onto my needs as a researcher. I suggested the Zach write a guide for people like me. He told me:
 
 > Git is a really complex piece of software. It isn't hard to learn how to do basic things, but introductions are probably better left to people who really understand things.
 

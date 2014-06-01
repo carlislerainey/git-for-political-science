@@ -4,21 +4,23 @@
 
 Git/GitHub is hard, and my experience aligns well with Zach's.
 
-In spite of this, another Zach, [Zach Jones](http://zmjones.com/), [convinced](http://zmjones.com/git/) me to use Git/GitHub to publicly version-control my research projectswith his [article](http://zmjones.com/git/) in *The Political Methodologist*. 
+In spite of this, another Zach, [Zach Jones](http://zmjones.com/), [convinced](http://zmjones.com/git/) me to use Git/GitHub to publicly version-control my research projects with his [article](http://zmjones.com/git/) in *The Political Methodologist*. 
 
 I had no trouble installing Git, setting up a GitHub account, initializing, adding, committing, and pushing. But I had a lot of questions. Many of these question did not revolve around the software, but around best practices.
 
-* How often should should I commit changes?
+* How often should I commit changes?
 * What files should I track? Should I track the data? The manuscript?
-* Given that I am not writing and releasing different versions software, should I be using tags?
+* Given that I am not writing and releasing different versions of software, should I be using tags? If so, how?
+* How should a structure my files and directories to to get the most out of the process?
+* What about coauthoring? 
 
-In short, most users of Git/GitHub are programmers. I am a political scientist. Most users are tracking software. I want to track an empirical research project. I had a lot of difficulty mapping the Git/GitHub facilities onto my needs as a researcher. I suggested the Zach write a guide for people like me. He told me:
+In short, most users of Git/GitHub are programmers. I am a political scientist. Most users are tracking software. I want to track an empirical research project (changes to the data, code, and manuscript). I had a lot of difficulty mapping the Git/GitHub facilities onto my needs as a researcher. I suggested the Zach write a guide for people like me. He told me:
 
 > Git is a really complex piece of software. It isn't hard to learn how to do basic things, but introductions are probably better left to people who really understand things.
 
-Well, I've poked around the Internet and can't find a useful introduction to GitHub for political scientists. For example, I'd like to have my graduate students publicly version control their research projects this fall, but I can't find a good introduction to Git/GitHub that suits their need.
+He's probably right, but I've poked around the Internet and can't find a useful introduction to GitHub for political scientists. For example, I'd like to have my graduate students publicly version control their research projects this fall, but I can't find a good introduction to Git/GitHub that suits their need. So I, the least qualified (well, probably not the least, but you know what I mean) among us, have decided to put my notes and thoughts about Git/GitHub on GitHub. I'm doing that with all my projects these days and I have found it well worth the effort. 
 
-So what I've decided to do is put together all the useful links and snippets of code that I've found useful and describe how I've incorporated it into my workflow. I'm certain that I could be doing things better. There are probably things that are just plain wrong. If you see things that I could do better or should do differently, please create an issue or, even better, fork the repository and suggest a change.
+I'm certain that I could be doing things better. There are probably things that are just plain wrong. If you see things that I could do better or should do differently, please create an issue or, even better, fork the repository and suggest a change. Part of my motivation in all of this is to learn something from the community of GitHub users in political science. Perhaps I have something to offer as well. 
 
 There are several popular resources for learning Git and/or GitHub. Here are a few that I've found useful:
 

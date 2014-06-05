@@ -110,7 +110,7 @@ Instead, use
 
 There is a button near the top of the interface that allows you to switch from HTTPS to SSH. Just click it and GitHub will change its suggestion.
 
-This will allow you to push to GitHb without providing your username and password. If you've set up the remote with the https://... url, then you can change it by simply running the suggested alternative after setting the working directory to the project directory.
+This will allow you to push to GitHb without providing your username and password. If you've set up the remote with the https://... url, then you can change it by simply removing the current remote by using `git remote rm origin` and then using the suggested alternative.
 
 For more information, see Karl Broman's [discussion](http://kbroman.github.io/github_tutorial/pages/init.html) of intializing repositories.
 

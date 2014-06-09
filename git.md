@@ -24,10 +24,10 @@ He's probably right, but I've poked around the Internet and can't find a useful 
 I'm certain that I could be doing things better. There are probably things that are just plain wrong. If you see things that I could do better or should do differently, please [open an issue](https://github.com/carlislerainey/git-for-political-science/issues?state=open), [email me](mailto:carlislerainey@gmail.com) or, even better, [fork the repository](https://github.com/carlislerainey/git-for-political-science/fork) and suggest a change. Part of my motivation in all of this is to learn something from the community of GitHub users in political science. Perhaps I have something to offer as well. 
 
 There are several popular resources for learning Git and/or GitHub. Here are a few that I've found useful:
-* An easy introduction to [setting up a repository](http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1#awesm=~oGmUXhSoloeEZM) and [basic Git functions](http://readwrite.com/2013/10/02/github-for-beginners-part-2#awesm=~oGmW6JfXQaYZAk).
+* An easy introduction to [setting up a repository](http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1) and [basic Git functions](http://readwrite.com/2013/10/02/github-for-beginners-part-2).
 * [Pro-Git](http://git-scm.com/book)
 * [Try Git](https://try.github.io/levels/1/challenges/1)
-* A [Git/GitHub Tutorial](http://kbroman.github.io/github_tutorial/), the [Most Important Git Commands](https://github.com/kbroman/Tools4RR/blob/master/04_Git/GitCommands/git_notes.md), and some [slides](Karl Broman) from Karl Broman
+* A [Git/GitHub Tutorial](http://kbroman.github.io/github_tutorial/), the [Most Important Git Commands](https://github.com/kbroman/Tools4RR/blob/master/04_Git/GitCommands/git_notes.md), and some [slides](http://kbroman.github.io/Tools4RR/assets/lectures/04_git_withnotes.pdf) from Karl Broman
 * [GitHub Help](https://help.github.com/) pages
 * Roger Dudler's [Simple Guide](http://rogerdudler.github.io/git-guide/)
 * Some [slides](http://karthik.github.io/git_intro/#/slide-title) and a [paper](https://github.com/karthik/smb_git) from Karthik Ram

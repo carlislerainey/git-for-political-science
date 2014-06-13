@@ -1,3 +1,5 @@
+There are a couple of files here that might be interesting to you. First, [`git.md`](git.md) is the main document. It is an early version of a working guide to Git and GitHub for political scientists. The second is [`notes.md`](notes/notes.md), which is where I just store snippets of code that I plan to add (or consider adding) to the main document. 
+
 [Zach Jones](http://zmjones.com/) prompted me to use Git/GitHub with his [article](http://zmjones.com/git/) in *The Political Methodologist*. I'm not a programmer, but I'm probably above the median in tech-savyness. Git/GitHub was hard for me to learn. I'm still a little unsure of myself. 
 
 I had no trouble installing Git, setting up a GitHub account, initializing, adding, committing, and pushing. But I had (and still have) a lot of questions. Many of these question did not revolve around the software, but around best practices.

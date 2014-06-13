@@ -48,9 +48,9 @@ Thoughts from others on Git/GitHub.
 
 ## Some General Principles
 
-The project directory should contain all the code, data, and text relevant to a particular project. I keep files that are not project-specific (e.g., research papers that I'm reading) in a separate directory. (I'm still deciding whether it makes the most sense to have a single "master" bibliography `.bib` file or a smaller `.bib` file for each project. I've done it both ways and both have strengths.) In order to effectively use version control, then the main files must be in plain text, such as `.R` scripts, Stata `.do` files, LaTeX `.tex` files, or Markdown `.md` files, or comma-separated `.csv` data files. The directory should be named something short and descriptive and should not contain spaces (such as `unreliable`, `Need`, or `strategic mobilization`). In the past, I've capitalized directories and used lower-case for files, but I'm changing because a majority seem to use lower-case always (it looks a little neater in GitHub). Rich Fitzjohn [provides](http://nicercode.github.io/blog/2013-04-05-projects/) a nice overview of *one* good way to layout your project directories. See also [this discussion](https://github.com/carlislerainey/git-for-political-science/issues/1) with Brenton Kenkel.
+The project directory should contain all the code, data, and text relevant to a particular project. I keep files that are not project-specific (e.g., research papers that I'm reading) in a separate directory. (I'm still deciding whether it makes the most sense to have a single "master" bibliography `.bib` file or a smaller `.bib` file for each project. I've done it both ways and both have strengths.) In order to effectively use version control, then the main files must be in plain text, such as `.R` scripts, Stata `.do` files, LaTeX `.tex` files, or Markdown `.md` files, or comma-separated `.csv` data files. The directory should be named something short and descriptive and should not contain spaces (such as `unreliable`, `Need`, or `strategic-mobilization`). In the past, I've used upper-case and underscores for directories, but I'm changing because a majority seem to use lower-case and dashes (it looks a little neater in GitHub). Rich Fitzjohn [provides](http://nicercode.github.io/blog/2013-04-05-projects/) a nice overview of *one* good way to layout your project directories. See also [this discussion](https://github.com/carlislerainey/git-for-political-science/issues/1) with Brenton Kenkel.
 
-While Git (in principle) can track changes to binary files (such as `.xlsx`, `.docx`, or `.pdf`), it works best with plain text files (`.csv`, `.md`, `.tex`, .do). This allows Git to note only keep track of the versions, but to highlight any changes across versions. Therefore, for public version control to be *most* effective, you should plan on using plain text files for your data, manuscript, and code. Most code (such as `.do` files for Stata or `.R` scripts for R) are already in plain text, so no change is required. It is easy to convert data from Stata's proprietary `.dta` format or Excel's binary (but open) `.xlsx` format to a comma-separated `.csv` format that is more open, transparent, and trackable. Manuscripts present the biggest obstacle since switching from Microsoft Word's `.doc` or `.docx` formats to Markdown's `.md` or LaTeX's .tex are not trivial. However, this should not be a sticking point. When I coauthor with others who prefer Word, I simply track the `.docx` file. It is difficult to compare across different versions, but with descriptive commit messages and appropriate tagging at various stages of the publication process, Git works far better than `new_final_c_3b.docx`. If you are interested in using a more trackable format, then you can find more about `.tex` in the [wikibook](http://en.wikibooks.org/wiki/LaTeX) and `.md` (combined with `pandoc`) on John MacFarlane's [page](http://johnmacfarlane.net/pandoc/getting-started.html). You cn find out more about the differences between these two from a [discussion](http://yihui.name/en/2013/10/markdown-or-latex/) by YiHui Xie.
+While Git (in principle) can track changes to binary files (such as `.xlsx`, `.docx`, or `.pdf`), it works best with plain text files (`.csv`, `.md`, `.tex`, .do). This allows Git to note only keep track of the versions, but to highlight any changes across versions. Therefore, for public version control to be *most* effective, you should plan on using plain text files for your data, manuscript, and code. Most code (such as `.do` files for Stata or `.R` scripts for R) are already in plain text, so no change is required. It is easy to convert data from Stata's proprietary `.dta` format or Excel's binary (but open) `.xlsx` format to a comma-separated `.csv` format that is more open, transparent, and trackable. Manuscripts present the biggest obstacle since switching from Microsoft Word's `.doc` or `.docx` formats to Markdown's `.md` or LaTeX's `.tex` is not trivial. However, this should not be a sticking point. When I coauthor with others who prefer Word, I simply track the `.docx` file. It is difficult to compare across different versions, but with descriptive commit messages and appropriate tagging at various stages of the publication process, Git works far better than `new_final_c_3b.docx`. If you are interested in using a more trackable format, then you can find more about `.tex` in the [wikibook](http://en.wikibooks.org/wiki/LaTeX) and `.md` (combined with `pandoc`) on John MacFarlane's [page](http://johnmacfarlane.net/pandoc/getting-started.html). You can find out more about the differences between these two from a [discussion](http://yihui.name/en/2013/10/markdown-or-latex/) by Yihui Xie.
 
 ## Install Git
 
@@ -68,7 +68,7 @@ By default, Git "suggests" tracking all files in a directory, but you'll want to
 
 The GitHub user octocat [provides](https://gist.github.com/octocat/9257657) a suggested set of files to ignore.
 
-My `.gitignore` file seems to work pretty well for me, so I'm including it below. Notice that I keep an `Old_Files` directory in each project directory, where I throw old files that I don't plan on using any more. This shows that I don't completely trust the version control system. I'll be rid of this soon.
+I tend to include a local`.gitignore` file so that I can easily control exactly what files are ignored within particular projects. That allows me to adjust to slightly different file structures or avoid tracking large data set or sensitive data. A basic template seems to work pretty well for me, so I'm including it below. 
 
     *~
     .*
@@ -79,9 +79,16 @@ My `.gitignore` file seems to work pretty well for me, so I'm including it below
     *.blg
     *.log
     *.out
+    *.toc
     *.synctex.gz
-    Old_Files/
+    *.pdf
+    *.bib.bak
+    output
+    tabs
+    figs
+    old-files
 
+Notice that I keep an `old-files` directory in each project directory, where I throw old files that I don't plan on using any more. This shows that I don't completely trust the version control system. I'll be rid of this soon. Notice also that the R output, which goes into the `output`, 'doc/figs', or `doc/tabs` directory, is not tracked.
 
 ## Start Publicly Tracking a Project
 

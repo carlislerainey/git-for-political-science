@@ -88,7 +88,7 @@ I tend to include a local`.gitignore` file so that I can easily control exactly 
     figs
     old-files
 
-Notice that I keep an `old-files` directory in each project directory, where I throw old files that I don't plan on using any more. This shows that I don't completely trust the version control system. I'll be rid of this soon. Notice also that the R output, which goes into the `output`, 'doc/figs', or `doc/tabs` directory, is not tracked.
+Notice that I keep an `old-files` directory in each project directory, where I throw old files that I don't plan on using any more. This shows that I don't completely trust the version control system. I'll be rid of this soon. Notice also that the R output, which goes into the `output`, `doc/figs`, or `doc/tabs` directory, is not tracked.
 
 ## Start Publicly Tracking a Project
 
@@ -100,7 +100,7 @@ Notice that I keep an `old-files` directory in each project directory, where I t
         cd ~/Dropbox/Projects/NME
         git init
 
-3. **Add the files you want to track.** To start tracking files, you first need to make sure that you are working in the project directory. Then you can use the command `git status` to see what files you are already tracking, if any. Then you can add files with the `git add` command. At first, I recommend adding files one at a time. For example, suppose that your project directory is called `NME`, and that the file you want to add, nme.tex, is located in the subdirectory `Manuscript`. Then the following is what you want.
+3. **Add the files you want to track.** To start tracking files, you first need to make sure that you are working in the project directory. Then you can use the command `git status` to see what files you are already tracking, if any. Then you can add files with the `git add` command. At first, I recommend adding files one at a time. For example, suppose that your project directory is called `NME`, and that the file you want to add, ``nme.tex``, is located in the subdirectory `Manuscript`. Then the following is what you want.
 
         git status
         git add Manuscript/nme.tex

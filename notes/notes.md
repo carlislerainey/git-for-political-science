@@ -6,6 +6,8 @@ This is just a collection of incomplete notes. It includes some links to idea I 
 
 http://kernowsoul.com/blog/2012/06/20/4-ways-to-avoid-merge-commits-in-git/
 
+Dealing with dependent branches: https://muffinresearch.co.uk/how-do-you-deal-with-dependent-branches-on-github/
+
 ## Commit Messages
 
 An interesting add-on to vim that makes writing good commit messages much easier.

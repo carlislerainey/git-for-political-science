@@ -197,6 +197,10 @@ Note that if you are using binary files, such as `.docx`, you can download and c
 
 Note that you can also view and explore the tagged versions of the project by clicking the "Releases" button on the GitHub repository page.
 
+You can also compare the changes from tag1 to tag2 in `stratmob.tex` in the terminal `git diff`.
+
+    GIT_PAGER='' git diff doc/stratmob.tex --color-words tag1 tag2
+
 You can find out more about tagging from [Pro Git](http://git-scm.com/book/en/Git-Basics-Tagging).
 
 ## Make a Change to Someone Else's Project

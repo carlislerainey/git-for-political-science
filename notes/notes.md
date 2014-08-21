@@ -18,9 +18,6 @@ https://github.com/tpope/vim-fugitive
 
 I need to add a few lines about the way that git encourages you to slow down, keep things organized, and think in discrete steps.
 
-## Word Differences
-
-    GIT_PAGER='' git diff --color-words
 
 ## Setting, Updating, and Examining Remotes
 

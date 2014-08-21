@@ -70,8 +70,13 @@ The GitHub user octocat [provides](https://gist.github.com/octocat/9257657) a su
 
 I tend to include a local`.gitignore` file so that I can easily control exactly what files are ignored within particular projects. That allows me to adjust to slightly different file structures or avoid tracking large data set or sensitive data. A basic template seems to work pretty well for me, so I'm including it below. 
 
+    # ignore temp files w/ trailing ~
     *~
+
+    # ignore hidden files
     .*
+    
+    # ignore files with the rolling extensions
     *.DS_Store
     *.Rhistory
     *.aux
@@ -81,14 +86,18 @@ I tend to include a local`.gitignore` file so that I can easily control exactly 
     *.out
     *.toc
     *.synctex.gz
-    *.pdf
     *.bib.bak
-    output
-    tabs
-    figs
-    old-files
+    
+    # ignore my old files
+    old-files*
+    
+    # don't ignore the .gitignore file
+    !.gitignore
+    
 
-Notice that I keep an `old-files` directory in each project directory, where I throw old files that I don't plan on using any more. This shows that I don't completely trust the version control system. I'll be rid of this soon. Notice also that the R output, which goes into the `output`, `doc/figs`, or `doc/tabs` directory, is not tracked.
+Notice that I keep an `old-files` directory in each project directory, where I throw old files that I don't plan on using any more. This shows that I don't completely trust the version control system. I'll be rid of this soon.
+
+I think it is a good idea to keep track of the `.pdf` of the manuscript. That makes it a little easier to inspect changes sometimes. Also, I think it is a good idea to track any R output, such as cleaned data set and figures, except when these are prohibitively large. (GitHub [limits](https://help.github.com/articles/what-is-my-disk-quota) users to 100MB per file and 1GB per repository.)
 
 ## Start Publicly Tracking a Project
 
@@ -97,30 +106,24 @@ Notice that I keep an `old-files` directory in each project directory, where I t
 
   In my case, I keep my projects inside a "Project" directory in a Dropbox folder that is common across all my computers (and my iPhone and iPad). To initiate tracking, I need to do the following in the terminal (on Mac OS X).
 
-        cd ~/Dropbox/Projects/NME
+        cd ~/Dropbox/projects/strategic-mobilization
         git init
 
-3. **Add the files you want to track.** To start tracking files, you first need to make sure that you are working in the project directory. Then you can use the command `git status` to see what files you are already tracking, if any. Then you can add files with the `git add` command. At first, I recommend adding files one at a time. For example, suppose that your project directory is called `NME`, and that the file you want to add, ``nme.tex``, is located in the subdirectory `Manuscript`. Then the following is what you want.
+3. **Add the files you want to track.** To start tracking files, you first need to make sure that you are working in the project directory. Then you can use the command `git status` to see what files you are already tracking, if any. Then you can add files with the `git add` command. At first, I recommend adding files one at a time. For example, suppose that your project directory is called `strategic-mobilization`, and that the file you want to add, `stratmob.tex`, is located in the subdirectory `doc`. Then the following is what you want.
 
         git status
-        git add Manuscript/nme.tex
+        git add doc/stratmob.tex
         git commit -m "add manuscript"
 
 4. **Push your directory to GitHub.** Go to your GitHub page (i.e., https://github.com/username), click the "Repositories" tab, and click the "New" button. Give the repository a name. I always use the name of the project directory, but Brenton Kenkel and I had a useful [discussion](https://github.com/carlislerainey/git-for-political-science/issues/1) about this. Put in a short description of your project to help people find it (roughly less than 75 characters). GitHub will suggest that you several lines of code--don't run them yet.
 
-The first line suggests using
-
-    git remote add origin https://github.com/username/new_repo.git
-
-Instead, use 
+There is a button near the top of the interface that allows you to switch from HTTPS to SSH. Just click it and GitHub will change its suggestion. Using SSH makes it easier to push commits to GitHub. It should look something like this.
 
     git remote add origin git@github.com:username/new_repo.git
 
-There is a button near the top of the interface that allows you to switch from HTTPS to SSH. Just click it and GitHub will change its suggestion.
+Note: If you've set up the remote with the https://... url, then you can change it by simply removing the current remote by using `git remote rm origin` and then using the suggested alternative.
 
-This will allow you to push to GitHb without providing your username and password. If you've set up the remote with the https://... url, then you can change it by simply removing the current remote by using `git remote rm origin` and then using the suggested alternative.
-
-For more information, see Karl Broman's [discussion](http://kbroman.github.io/github_tutorial/pages/init.html) of intializing repositories.
+For more information, see Karl Broman's [discussion](http://kbroman.github.io/github_tutorial/pages/init.html) of initializing repositories.
 
 ## Update a Project
 
@@ -136,10 +139,10 @@ To update a project, you need to do the following:
 2. *Make the change.* Do this just as you normally would. The only thing to avoid is moving or renaming files. Git has commands that take care of this and move the files' history with them (see below for more details).
 3. *Stage the changes.* First, you should make sure that you are in the correct working directory. Then you should run `git status` and make sure that (1) you are on the correct branch (if you've started branching) and (2) that the modified files are as you expect. If everything is in order, then you need to add (or "stage") the modified files. I usually do this in one of three ways.
   1. Add files interactively. To do this, you can simply enter the command `git add -i` in the terminal. This causes Git to go into an interactive "shell mode" that allows you to select what you'd like to do (to add or "stage" files, choose update by typing "2" or "u" and pressing enter) and what files you'd like to do it to (type the number indexing the files you'd like to add, separated by commas, and press enter). Type "q" and press enter to quit the shell mode.
-  2. Add the files manually. To do this, simply enter the command `git add Folder/filename.ext`, with `Folder` substituted with the directory of the modified file and `filename.ext` substituted with the appropriate filename and extension. With this approach you'll need to go through and add each modified file, one-at-a-time. Note that `git add Folder` stages all the files and directories within `Folder`, even those that were not previously tracked.
+  2. Add the files manually. To do this, simply enter the command `git add folder/filename.ext`, with `folder` substituted with the directory of the modified file and `filename.ext` substituted with the appropriate filename and extension. With this approach you'll need to go through and add each modified file, one-at-a-time. Note that `git add folder` stages all the files and directories within `folder`, even those that were not previously tracked.
   3. Add all modified, previously tracked files. To do this, simply type `git add -u`. I find myself adopting this approach most often. I simple make sure that the files are modified as I expect by using `git status` beforehand.
 4. *Commit the changes.* Once the modified files are staged, the changes need to be committed. To do this, simply enter the command `git commit -m "does this"`, where "does this" is replaced with a short, descriptive commit message. Writing a good commit message is important. Briefly, it should (in the present tense) briefly describe the changes made (e.g., "add education as control variable"). In my view, short commit messages work well for the type of commits that I typically make, but you should be aware that their are different perspectives. Some think that longer commit messages are important. To do a longer commit message, you'll want to [associate](https://help.github.com/articles/associating-text-editors-with-git) an editor with Git (I use the [vim](http://linux.startcom.org/docs/en/Introduction%20to%20Linux/sect_06_02.html) default for OS X) and use `git commit` which will open an editor and allow you to type a longer message as suggested [here](http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message) [here](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html), [here](https://github.com/torvalds/linux/pull/17#issuecomment-5659933), [here](http://web-design-weekly.com/2013/09/01/a-better-git-commit/), and [here](http://zachholman.com/talk/more-git-and-github-secrets/) (starting at 15.24).
-5. *Push the changes to GitHub.* Just type `git push` and the changes are sent off to GitHub so that the files are *publicly* version controlled.
+5. *Push the changes to GitHub.* Just type `git push` and the changes are sent off to GitHub so that the files are *publicly* version-controlled.
 
 ## Unstage a File
 
@@ -159,7 +162,7 @@ As long as you don't make any changes to the files being moved around or renamed
 
 ## Using Tags Effectively
 
-As far as I can tell, tags are intended to denote stable versions of software, such as version 2.0. However, I've found it useful to use tags to denote important versions of the project. For example, after I submit a manuscript to a journal, I tag the most recent commit with a descriptive label (e.g., `ajps_initial`) and short description (e.g., initial submission to AJPS). This makes it very easy to go back and compare the current version to the version initially submitted to the journal. This makes it easier to write response memos.
+As far as I can tell, tags are intended to denote stable versions of software, such as version 2.0. However, I've found it useful to use tags to denote important versions of the project. For example, after I submit a manuscript to a journal, I tag the most recent commit with a descriptive label (e.g., `ajps-initial`) and short description (e.g., initial submission to AJPS). This makes it very easy to go back and compare the current version to the version initially submitted to the journal. This makes response memos a breeze.
 
 ### Assigning Tags
 
@@ -169,13 +172,13 @@ To assign a tag to the current commit, you just need to use
 
 In practice, my tags look something like
 
-    git tag -a jop_intial -m "Initial Submission to JOP"  
+    git tag -a jop-intial -m "Initial Submission to JOP"  
 
 Importantly, after assigning the tag, you need to use `git push --tags` to push the tags to GitHub.
 
 If you want to tag a previous commit, where `9fceb02` is first part of the commit ID, use
 
-    git tag -a descriptive_tag 9fceb02 -m "Short Description Here"
+    git tag -a descriptive-tag 9fceb02 -m "Short Description Here"
 
 You can use `git log` or explore the history of a project on GitHub to find the id of the desired commit. Notice that the ID is 40 characters long. It is enough to use just the first few.
 

@@ -168,11 +168,11 @@ As far as I can tell, tags are intended to denote stable versions of software, s
 
 To assign a tag to the current commit, you just need to use 
 
-    git tag -a descriptive_tag -m "Short Description Here" 
+    git tag -a descriptive_tag -m "short description" 
 
 In practice, my tags look something like
 
-    git tag -a jop-intial -m "Initial Submission to JOP"  
+    git tag -a jop-intial -m "initial submission to JOP"  
 
 Importantly, after assigning the tag, you need to use `git push --tags` to push the tags to GitHub.
 

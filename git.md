@@ -178,7 +178,7 @@ Importantly, after assigning the tag, you need to use `git push --tags` to push 
 
 If you want to tag a previous commit, where `9fceb02` is first part of the commit ID, use
 
-    git tag -a descriptive-tag 9fceb02 -m "Short Description Here"
+    git tag -a descriptive-tag 9fceb02 -m "short description"
 
 You can use `git log` or explore the history of a project on GitHub to find the id of the desired commit. Notice that the ID is 40 characters long. It is enough to use just the first few.
 

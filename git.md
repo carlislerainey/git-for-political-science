@@ -32,6 +32,7 @@ There are several popular resources for learning Git and/or GitHub. Here are a f
 * Roger Dudler's [Simple Guide](http://rogerdudler.github.io/git-guide/)
 * Some [slides](http://karthik.github.io/git_intro/#/slide-title) and a [paper](https://github.com/karthik/smb_git) from Karthik Ram
 * An [introduction](http://nicercode.github.io/git/) from NiceRCode.
+* An [interactive tutorial](https://github.com/jlord/git-it-electron/blob/master/README.md) "that teaches you Git and GitHub on the [command line](https://en.wikipedia.org/wiki/Command-line_interface)"
 
 ##  Motivation for Git Combined with GitHub.
 

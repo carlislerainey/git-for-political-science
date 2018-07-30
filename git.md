@@ -33,6 +33,7 @@ There are several popular resources for learning Git and/or GitHub. Here are a f
 * Some [slides](http://karthik.github.io/git_intro/#/slide-title) and a [paper](https://github.com/karthik/smb_git) from Karthik Ram
 * An [introduction](http://nicercode.github.io/git/) from NiceRCode.
 * An [interactive tutorial](https://github.com/jlord/git-it-electron/blob/master/README.md) "that teaches you Git and GitHub on the [command line](https://en.wikipedia.org/wiki/Command-line_interface)"
+* [Git in RStudio](https://support.rstudio.com/hc/en-us/articles/200532077?version=1.1.423&mode=desktop) 
 
 ##  Motivation for Git Combined with GitHub.
 
@@ -207,6 +208,17 @@ You can find out more about tagging from [Pro Git](http://git-scm.com/book/en/Gi
 ## Make a Change to Someone Else's Project
 
 Suppose you want to make a change to someone else's project. It might be that you are making a change to a project hosted by a coauthor or want to make a suggested change to a total stranger's code. The basic idea is to fork their repository into your own GitHub account, clone it onto your hard drive, make any changes, and submit a pull request.
+
+
+## Git for RStudio
+
+Initiating Git, comitting, pushing and pulling can all be done through the RStudio development environment for `R`.  To use Git in RStudio, your files must be part of an `R` project [(which is good practice anyways)](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/). You will need to have Git installed beforehand. 
+
+To start using Git on a new project, create a new `R` project in the repository. Then, under **Tools**, select **Project Options**. From there, under **Version Control** select **Git**, and you're on your way. Origin specifies the filepath for the associated GitHub repository. 
+
+After set up, a Git tab will appear by the environment and history tabs in RStudio. From there, use `diff` to check the changes in your files before commiting them, commit your changes, and push or pull from the GitHub repo. 
+
+RStudio makes using git more straightforward. RStudio can handle most version control tasks, but tagging versions and some other tasks go through Github. 
 
 ## Misc. Material
 
